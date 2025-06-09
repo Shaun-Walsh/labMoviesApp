@@ -6,10 +6,10 @@ import {MovieImage} from './types/interfaces'
 
 const movies = [sample, sample, sample, sample, sample, sample, sample];
 const images: MovieImage[] = [
-  { file_path: "/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg"},
-  { file_path: "/v1QQKq8M0fWxMgSdGOX1aCv8qMB.jpg"},
-  { file_path: "/2iGN0aKHJYD0xQydlfuCUAcgNbO.jpg"},
-  { file_path: "/rjBwhsOzHKUw2NIOrE7aMqjfe6s.jpg"},
+  { file_path: "/2W4ZvACURDyhiNnSIaFPHfNbny3.jpg"},
+  { file_path: "/3ombg55JQiIpoPnXYb2oYdr6DtP.jpgg"},
+  { file_path: "/jaWM0xXSLeb1O2lpfQ9kI0WiGOu.jpg"},
+  { file_path: "/b2JplRt6qfZKkupnoxl57n3r46y.jpg"},
 ];
 
 const App = () => {

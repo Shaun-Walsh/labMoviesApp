@@ -22,7 +22,11 @@ export interface BaseMovieProps {
       id: number;
       name: string;
     }[];
-  }
+    production_countries: {
+      id: string;
+      name: string;
+  }[];
+}
    
   export interface MovieImage {
   file_path: string;
