@@ -1,23 +1,23 @@
-import { createRoot } from "react-dom/client";
-//import HomePage from "./pages/homePage";
-import sample from './stories/sampleData'
-import MovieDetailsPage from './pages/movieDetailsPage'
-import {MovieImage} from './types/interfaces'
-
-const movies = [sample, sample, sample, sample, sample, sample, sample];
-const images: MovieImage[] = [
-  { file_path: "/2W4ZvACURDyhiNnSIaFPHfNbny3.jpg"},
-  { file_path: "/3ombg55JQiIpoPnXYb2oYdr6DtP.jpgg"},
-  { file_path: "/jaWM0xXSLeb1O2lpfQ9kI0WiGOu.jpg"},
-  { file_path: "/b2JplRt6qfZKkupnoxl57n3r46y.jpg"},
-];
+import React from "react";
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Route, Navigate, Routes } from "react-router-dom";
+import HomePage from "./pages/homePage";
+import MoviePage from "./pages/movieDetailsPage";
 
 const App = () => {
   return (
-    <MovieDetailsPage movie={sample} images={images} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/movies/:id" element={<MoviePage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
-;
 
-const rootElement = createRoot(document.getElementById("root")!); 
-rootElement.render(<App />);
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)
