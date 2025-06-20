@@ -6,6 +6,8 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import HomeIcon from "@mui/icons-material/Home";
 import { MovieDetailsProps } from "../../types/interfaces"; 
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { json } from "react-router-dom";
 
 const styles = {
     root: {  
@@ -17,7 +19,10 @@ const styles = {
   },
 };
 
+
 const MovieHeader: React.FC<MovieDetailsProps> = (movie) => {
+  const favourites = JSON.parse(localStorage.getItem("favourites") || "[]");
+  const isFavourite = favourites.some(fav => fav.id === movie.id);
   
   return (
     <Paper component="div" sx={styles.root}>
@@ -32,6 +37,7 @@ const MovieHeader: React.FC<MovieDetailsProps> = (movie) => {
         </a>
         <br />
         <span>{`${movie.tagline}`} </span>
+        {isFavourite && <FavoriteIcon color="error" fontSize="large" />}
       </Typography>
       <IconButton aria-label="go forward">
         <ArrowForwardIcon color="primary" fontSize="large" />
