@@ -40,4 +40,11 @@ export const getMovies = () => {
         return json.results;
       });
   };
-
+export const getUpcomingMovies = () => {
+  return fetch(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_release_type=2|3&release_date.gte=${import.meta.env.VITE_MIN_DATE}&release_date.lte=${import.meta.env.VITE_MAX_DATE}`
+  )
+    .then(res => res.json())
+    .then(json => json.results);
+};
+  
